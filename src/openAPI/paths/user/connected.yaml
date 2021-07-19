@@ -1,0 +1,15 @@
+get:
+  summary: 'Get all connected users'
+  description: "Connected user are fetched based on the presence of a socketId in their session informations"
+  operationId: getAllConnected
+  tags:
+    - User
+  responses:
+    '200':
+      description: 'List of connected users'
+    default:
+      description: Error
+  
+
+
+      

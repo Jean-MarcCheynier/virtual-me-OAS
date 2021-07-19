@@ -1,0 +1,45 @@
+#Get all cv request based on a specific tab
+get:
+  summary: 'Get cv by id'
+  description: "Get one cv by its ID"
+  operationId: getCvById
+  tags:
+    - cv
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: _id of the cv to retrieve.
+      schema:
+        type: string
+
+  responses:
+    '200':
+      description: 'cv'
+    default:
+      description: Error
+
+
+#Get all cv request based on a specific tab
+delete:
+  summary: 'Delete cv by id'
+  description: "Delete one cv by its ID"
+  operationId: deleteCvById
+  tags:
+    - cv
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: _id of the cv to delete.
+      schema:
+        type: string
+
+  responses:
+    '200':
+      description: 'cv'
+    default:
+      description: Error
+
+
+      

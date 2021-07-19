@@ -1,0 +1,33 @@
+description: 'Role of the user'
+type: object
+properties:
+  from:
+    type: string
+  to:
+    type: string
+  school:
+    type: object
+    properties: 
+      name: 
+        type: string
+      type: 
+        type: string
+      translation: 
+        type: object
+    address:
+      type: object
+      properties:  
+        line1:
+          type: string
+        line2:
+          type: string
+        zipCode:
+          type: string
+        city:
+          type: string
+        cityCode:
+          type: string
+        country:
+          type: string
+        countryCode:
+          type: string

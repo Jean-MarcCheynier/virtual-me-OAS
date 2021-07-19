@@ -1,0 +1,53 @@
+summary: Example of CV
+value: {
+cv: {
+    infos: {
+      name: "Jean-Marc",
+      surname: "Cheynier",
+      dateOfBirth: "1991/04/25",
+      nationality: "French",
+      nationalityLOCCODE: "FR",
+      contact: {
+        email: jm@cheynier.com,
+        phone: [{
+          countryCode: "+33",
+          name: "perso",
+          number: "0649334551"
+        }]
+        
+      },
+      address: {
+        line1: "Chaussée de Waterloo, 87",
+        zipCode: "1060",
+        city: "Saint-Gilles",
+        country: Belgique,
+        countryCode: "BE"
+      }
+    },
+    skills: [
+      {
+        name: "JS",
+        level: "SENIOR",
+        type: "Programming",
+        translation: { 
+          fr: "Programmation Javascript",
+          en: "Javascript Programming",
+        }
+      },
+    ],
+    degrees: [
+      {
+        from: "2011/09/01",
+        to: "2014/09/01",
+        school: {
+          name: "Telecom Nancy",
+          type: "Engineering School",
+          translation: {
+            fr: "Telecome Nancy, Grande Ecole d'Ingénieur",
+            en: "Master of Computer Science at 'Telecom Nancy' engineering school"
+          }
+        },
+      }
+    ]
+  }
+}

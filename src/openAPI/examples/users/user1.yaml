@@ -1,0 +1,5 @@
+summary: User test
+value: {
+  login: 'test', 
+  password: 'test'
+}

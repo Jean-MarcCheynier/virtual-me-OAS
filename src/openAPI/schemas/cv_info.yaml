@@ -1,0 +1,10 @@
+description: 'Role of the user'
+type: object
+properties:
+  level:
+    type: string
+  type: 
+    type: string
+  traslation: 
+    type: object
+  

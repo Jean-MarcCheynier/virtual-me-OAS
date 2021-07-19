@@ -1,0 +1,16 @@
+post:
+  summary: 'Signup '
+  description: "Signup"
+  operationId: signup
+  tags:
+    - Auth
+  requestBody:
+    content:
+      'application/json': 
+        schema:
+          $ref: '../../schemas/sign.yaml'
+  responses:
+    '200':
+      description: 'Created User'        
+    default:
+      description: Error

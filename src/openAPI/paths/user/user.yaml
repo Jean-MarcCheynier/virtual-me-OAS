@@ -1,0 +1,45 @@
+#Get all user request based on a specific tab
+get:
+  summary: 'Get user by id'
+  description: "Get one user by its ID"
+  operationId: getById
+  tags:
+    - User
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: _id of the user to retrieve.
+      schema:
+        type: string
+
+  responses:
+    '200':
+      description: 'User'
+    default:
+      description: Error
+
+
+#Get all user request based on a specific tab
+delete:
+  summary: 'Delete user by id'
+  description: "Delete one user by its ID"
+  operationId: deleteById
+  tags:
+    - User
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: _id of the user to delete.
+      schema:
+        type: string
+
+  responses:
+    '200':
+      description: 'User'
+    default:
+      description: Error
+
+
+      

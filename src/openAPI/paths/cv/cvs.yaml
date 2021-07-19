@@ -1,0 +1,35 @@
+get:
+  summary: 'Get all cvs'
+  description: "Get all cvs"
+  operationId: getAllCv
+  tags:
+    - cv
+  responses:
+    '200':
+      description: 'List of cvs'
+    default:
+      description: Error
+
+post:
+  summary: 'Create new cv'
+  description: "Create cv"
+  operationId: createCv
+  tags:
+    - cv
+  requestBody:
+    content:
+      'application/json': 
+        schema:
+          $ref: '../../schemas/cv.yaml'
+        examples: 
+          cv1: 
+            $ref: "../../examples/cv/cv1.yaml"
+  responses:
+    '200':
+      description: 'New cv'        
+    default:
+      description: Error
+  
+
+
+      

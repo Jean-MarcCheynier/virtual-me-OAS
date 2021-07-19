@@ -1,0 +1,381 @@
+openapi: 3.0.1
+info:
+  version: '1'
+  contact:
+    name: Jean-Marc Cheynier
+    email: jm@cheynier.com
+  title: virtual_me_oas
+  description: API specification for virtual-me project
+servers:
+  - description: local
+    url: 'http://localhost:5000/api'
+tags:
+  - name: Auth
+  - name: User
+paths:
+  /auth/signin:
+    post:
+      summary: 'Signin '
+      description: Sign in and get API token
+      operationId: signin
+      tags:
+        - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: Login form
+              type: object
+              required:
+                - login
+                - password
+              properties:
+                login:
+                  description: Username or Email of the user
+                  type: string
+                password:
+                  description: Password
+                  type: string
+            examples:
+              user1:
+                $ref: '#/components/examples/UserTest'
+      responses:
+        '200':
+          description: Logged in User
+        default:
+          description: Error
+  /auth/signup:
+    post:
+      summary: 'Signup '
+      description: Signup
+      operationId: signup
+      tags:
+        - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/paths/~1auth~1signin/post/requestBody/content/application~1json/schema'
+      responses:
+        '200':
+          description: Created User
+        default:
+          description: Error
+  /user:
+    get:
+      summary: Get all users
+      description: Get all users
+      operationId: getAll
+      tags:
+        - User
+      responses:
+        '200':
+          description: List of users
+        default:
+          description: Error
+    post:
+      summary: Create new user
+      description: Create User
+      operationId: create
+      tags:
+        - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - user
+              properties:
+                user:
+                  $ref: '#/components/schemas/user'
+      responses:
+        '200':
+          description: New User
+        default:
+          description: Error
+  '/user/{id}':
+    get:
+      summary: Get user by id
+      description: Get one user by its ID
+      operationId: getById
+      tags:
+        - User
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: _id of the user to retrieve.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User
+        default:
+          description: Error
+    delete:
+      summary: Delete user by id
+      description: Delete one user by its ID
+      operationId: deleteById
+      tags:
+        - User
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: _id of the user to delete.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User
+        default:
+          description: Error
+  /cv:
+    get:
+      summary: Get all cvs
+      description: Get all cvs
+      operationId: getAllCv
+      tags:
+        - cv
+      responses:
+        '200':
+          description: List of cvs
+        default:
+          description: Error
+    post:
+      summary: Create new cv
+      description: Create cv
+      operationId: createCv
+      tags:
+        - cv
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cv'
+            examples:
+              cv1:
+                $ref: '#/components/examples/CV1'
+      responses:
+        '200':
+          description: New cv
+        default:
+          description: Error
+  '/cv/{id}':
+    get:
+      summary: Get cv by id
+      description: Get one cv by its ID
+      operationId: getCvById
+      tags:
+        - cv
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: _id of the cv to retrieve.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: cv
+        default:
+          description: Error
+    delete:
+      summary: Delete cv by id
+      description: Delete one cv by its ID
+      operationId: deleteCvById
+      tags:
+        - cv
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: _id of the cv to delete.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: cv
+        default:
+          description: Error
+  /user/connected:
+    get:
+      summary: Get all connected users
+      description: Connected user are fetched based on the presence of a socketId in their session informations
+      operationId: getAllConnected
+      tags:
+        - User
+      responses:
+        '200':
+          description: List of connected users
+        default:
+          description: Error
+  /bot/dialog:
+    post:
+      summary: Send message to the /bot
+      description: Send a message to the bot
+      operationId: dialog
+      tags:
+        - SAP
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                login:
+                  description: Message to send to the bot
+                  type: string
+      responses:
+        '200':
+          description: Response from the SAP Bot
+        default:
+          description: Error
+components:
+  schemas:
+    user:
+      description: User object
+      type: object
+      required:
+        - name
+        - email
+        - role
+      properties:
+        name:
+          description: Name of the user
+          type: string
+        email:
+          description: Email of the user
+          type: string
+        role:
+          description: Role of the user
+          type: string
+          default: admin
+          enum:
+            - admin
+            - user
+    cv:
+      type: object
+      required:
+        - cv
+      properties:
+        cv:
+          description: Cv object
+          type: object
+          required:
+            - skills
+            - degrees
+            - infos
+          properties:
+            skills:
+              type: array
+              items:
+                $ref: '#/components/schemas/skill'
+            degrees:
+              type: array
+              items:
+                description: Role of the user
+                type: object
+                properties:
+                  from:
+                    type: string
+                  to:
+                    type: string
+                  school:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      type:
+                        type: string
+                      translation:
+                        type: object
+                    address:
+                      type: object
+                      properties:
+                        line1:
+                          type: string
+                        line2:
+                          type: string
+                        zipCode:
+                          type: string
+                        city:
+                          type: string
+                        cityCode:
+                          type: string
+                        country:
+                          type: string
+                        countryCode:
+                          type: string
+            infos:
+              description: Role of the user
+              type: object
+              properties:
+                level:
+                  type: string
+                type:
+                  type: string
+                traslation:
+                  type: object
+    skill:
+      description: Role of the user
+      type: object
+      properties:
+        level:
+          type: string
+        type:
+          type: string
+        traslation:
+          type: object
+  examples:
+    UserTest:
+      summary: User test
+      value:
+        login: test
+        password: test
+    CV1:
+      summary: Example of CV
+      value:
+        cv:
+          infos:
+            name: Jean-Marc
+            surname: Cheynier
+            dateOfBirth: 1991/04/25
+            nationality: French
+            nationalityLOCCODE: FR
+            contact:
+              email: jm@cheynier.com
+              phone:
+                - countryCode: '+33'
+                  name: perso
+                  number: 0649334551
+            address:
+              line1: 'Chaussée de Waterloo, 87'
+              zipCode: '1060'
+              city: Saint-Gilles
+              country: Belgique
+              countryCode: BE
+          skills:
+            - name: JS
+              level: SENIOR
+              type: Programming
+              translation:
+                fr: Programmation Javascript
+                en: Javascript Programming
+          degrees:
+            - from: 2011/09/01
+              to: 2014/09/01
+              school:
+                name: Telecom Nancy
+                type: Engineering School
+                translation:
+                  fr: 'Telecome Nancy, Grande Ecole d''Ingénieur'
+                  en: Master of Computer Science at 'Telecom Nancy' engineering school
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: '{{JWT}}'
+security:
+  - bearerAuth: []

@@ -1,0 +1,8 @@
+UserTest: 
+  $ref: './users/user1.yaml'
+#loginImporter: 
+#  $ref: './login/loginImporter.yaml'
+#loginInspector: 
+#  $ref: './login/loginInspector.yaml'
+CV1: 
+  $ref: './cv/cv1.yaml'

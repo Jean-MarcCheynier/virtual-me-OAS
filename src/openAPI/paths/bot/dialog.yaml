@@ -1,0 +1,26 @@
+#Get all user request based on a specific tab
+post:
+  summary: 'Send message to the /bot'
+  description: "Send a message to the bot"
+  operationId: dialog
+  tags:
+    - SAP
+  requestBody:
+    content:
+      'application/json': 
+        schema:
+          type: object
+          properties:
+            login:
+              description: Message to send to the bot
+              type: string
+
+        
+  responses:
+    '200':
+      description: 'Response from the SAP Bot'
+    default:
+      description: Error
+
+
+      

@@ -1,0 +1,50 @@
+openapi: 3.0.1
+info:
+  version: '1'
+  contact:
+    name: 'Jean-Marc Cheynier'
+    email: 'jm@cheynier.com'
+  title: 'virtual_me_oas'
+  description: 'API specification for virtual-me project'
+servers:
+  - description: local
+    url: 'http://localhost:5000/api' 
+
+tags:
+  - name: Auth
+  - name: User
+paths:
+  /auth/signin:
+    $ref: "./paths/auth/signin.yaml"
+  /auth/signup:
+    $ref: "./paths/auth/signup.yaml"
+  /user:
+    $ref: "./paths/user/users.yaml"
+  /user/{id}:
+    $ref: "./paths/user/user.yaml"
+  /cv:
+    $ref: "./paths/cv/cvs.yaml"
+  /cv/{id}:
+    $ref: "./paths/cv/cv.yaml"
+  /user/connected:
+    $ref: "./paths/user/connected.yaml"
+  /bot/dialog:
+    $ref: "./paths/bot/dialog.yaml"
+
+
+components:
+  #parameters:
+  #  $ref: "./parameters/_index.yaml"
+  schemas:
+    $ref: "./schemas/_index.yaml"
+  #responses:
+  #  $ref: "./responses/_index.yaml"
+  examples:
+    $ref: "./examples/_index.yaml"
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: '{{JWT}}'
+security:
+  - bearerAuth: []

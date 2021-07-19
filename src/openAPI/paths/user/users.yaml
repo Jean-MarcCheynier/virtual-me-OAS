@@ -1,0 +1,36 @@
+get:
+  summary: 'Get all users'
+  description: "Get all users"
+  operationId: getAll
+  tags:
+    - User
+  responses:
+    '200':
+      description: 'List of users'
+    default:
+      description: Error
+
+post:
+  summary: 'Create new user'
+  description: "Create User"
+  operationId: create
+  tags:
+    - User
+  requestBody:
+    content:
+      'application/json': 
+        schema:
+          type: object
+          required: [user]
+          properties:
+            user: 
+              $ref: '../../schemas/user.yaml'
+  responses:
+    '200':
+      description: 'New User'        
+    default:
+      description: Error
+  
+
+
+      

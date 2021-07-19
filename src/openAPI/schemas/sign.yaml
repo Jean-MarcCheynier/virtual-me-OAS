@@ -1,0 +1,10 @@
+description: Login form
+type: object
+required: [login, password]
+properties:
+  login:
+    description: 'Username or Email of the user'
+    type: string
+  password:
+    description: 'Password'
+    type: string

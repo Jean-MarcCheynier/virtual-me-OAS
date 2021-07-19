@@ -1,0 +1,19 @@
+type: object
+required: [cv]
+properties:
+  cv: 
+    description: Cv object
+    type: object
+    required: [skills, degrees, infos]
+    properties:
+      skills:
+        type: array
+        items: 
+          $ref: './cv_skill.yaml'
+          
+      degrees:
+        type: array
+        items: 
+          $ref: './cv_degree.yaml'
+      infos:
+        $ref: './cv_info.yaml'

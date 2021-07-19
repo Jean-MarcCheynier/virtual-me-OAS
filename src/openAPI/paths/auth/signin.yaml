@@ -1,0 +1,19 @@
+post:
+  summary: 'Signin '
+  description: "Sign in and get API token"
+  operationId: signin
+  tags:
+    - Auth
+  requestBody:
+    content:
+      'application/json': 
+        schema:
+          $ref: '../../schemas/sign.yaml'
+        examples: 
+          user1: 
+            $ref: '../../examples/users/user1.yaml'
+  responses:
+    '200':
+      description: 'Logged in User'        
+    default:
+      description: Error

@@ -1,0 +1,8 @@
+user: 
+  $ref: "./user.yaml"
+cv: 
+  $ref: "./cv.yaml"
+skill: 
+  $ref: "./cv_skill.yaml"
+#trade:
+#  $ref: './Trade.yaml'

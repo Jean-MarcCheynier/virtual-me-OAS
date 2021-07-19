@@ -1,0 +1,17 @@
+description: User object
+type: object
+required: [name, email, role]
+properties:
+  name:
+    description: 'Name of the user'
+    type: string
+  email:
+    description: 'Email of the user'
+    type: string
+  role:
+    description: 'Role of the user'
+    type: string
+    default: admin
+    enum:
+      - 'admin'
+      - 'user'
