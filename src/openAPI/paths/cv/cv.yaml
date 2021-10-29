@@ -1,4 +1,4 @@
-#Get all cv request based on a specific tab
+#Get cv by ID
 get:
   summary: 'Get cv by id'
   description: "Get one cv by its ID"
@@ -12,6 +12,35 @@ get:
       description: _id of the cv to retrieve.
       schema:
         type: string
+
+  responses:
+    '200':
+      description: 'cv'
+    default:
+      description: Error
+
+#Update cv by ID
+put:
+  summary: 'Update cv by id'
+  description: 'Update cv by id'
+  operationId: updateCvById
+  tags:
+    - cv
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: _id of the cv to update.
+      schema:
+        type: string
+  requestBody:
+    content:
+      'application/json': 
+        schema:
+          $ref: '../../schemas/cv.yaml'
+        examples: 
+          cv1: 
+            $ref: "../../examples/cv/cv1.yaml"
 
   responses:
     '200':

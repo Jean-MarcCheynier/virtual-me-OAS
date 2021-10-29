@@ -21,7 +21,7 @@
     "yarn-or-npm": "^3.0.1"
   },
   "scripts": {
-    "start": "PORT=3006 react-scripts start",
+    "start": "set PORT=3006 && react-scripts start",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "build:openapi": "swagger-cli bundle src/openAPI/openapi.yaml --outfile public/openAPI/openapi.yaml --type yaml",

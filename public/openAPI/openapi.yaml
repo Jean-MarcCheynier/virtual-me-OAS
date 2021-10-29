@@ -181,6 +181,32 @@ paths:
           description: cv
         default:
           description: Error
+    put:
+      summary: Update cv by id
+      description: Update cv by id
+      operationId: updateCvById
+      tags:
+        - cv
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: _id of the cv to update.
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cv'
+            examples:
+              cv1:
+                $ref: '#/components/examples/CV1'
+      responses:
+        '200':
+          description: cv
+        default:
+          description: Error
     delete:
       summary: Delete cv by id
       description: Delete one cv by its ID
