@@ -30,6 +30,8 @@ paths:
     $ref: "./paths/user/connected.yaml"
   /bot/dialog:
     $ref: "./paths/bot/dialog.yaml"
+  /connector/action:
+    $ref: "./paths/connector/action.yaml"
 
 
 components:

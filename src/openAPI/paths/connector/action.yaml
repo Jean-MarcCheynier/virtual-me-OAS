@@ -1,0 +1,26 @@
+post:
+  summary: 'Action '
+  description: "Trigger action endpoint dedicated to SAP CAI webhooks"
+  operationId: action
+  tags:
+    - Connector
+  requestBody:
+    content:
+      'application/json': 
+        schema:
+          type: object
+          properties:
+            convId: 
+              type: string
+              description: ID of the conversation
+            actionCode:
+              type: string
+              description: ActionCode enum (CHANGE_COLOR='changeUserColor')
+            content: 
+              type: any
+              description: content sent by SAP CAI
+  responses:
+    '200':
+      description: 'Logged in User'        
+    default:
+      description: Error

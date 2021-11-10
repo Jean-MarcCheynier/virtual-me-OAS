@@ -258,6 +258,33 @@ paths:
           description: Response from the SAP Bot
         default:
           description: Error
+  /connector/action:
+    post:
+      summary: 'Action '
+      description: Trigger action endpoint dedicated to SAP CAI webhooks
+      operationId: action
+      tags:
+        - Connector
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                convId:
+                  type: string
+                  description: ID of the conversation
+                actionCode:
+                  type: string
+                  description: ActionCode enum (CHANGE_COLOR='changeUserColor')
+                content:
+                  type: any
+                  description: content sent by SAP CAI
+      responses:
+        '200':
+          description: Logged in User
+        default:
+          description: Error
 components:
   schemas:
     user:
@@ -358,8 +385,8 @@ components:
     UserTest:
       summary: User test
       value:
-        login: test
-        password: test
+        login: jmchey
+        password: jmchey
     CV1:
       summary: Example of CV
       value:
@@ -368,36 +395,132 @@ components:
             name: Jean-Marc
             surname: Cheynier
             dateOfBirth: 1991/04/25
-            nationality: French
-            nationalityLOCCODE: FR
+            citizenship:
+              translation:
+                fr: Française
+                en: French
+            citizenshipLOCCODE: FR
             contact:
-              email: jm@cheynier.com
-              phone:
-                - countryCode: '+33'
-                  name: perso
-                  number: 0649334551
-            address:
-              line1: 'Chaussée de Waterloo, 87'
-              zipCode: '1060'
-              city: Saint-Gilles
-              country: Belgique
-              countryCode: BE
+              - type: email
+                name:
+                  translation:
+                    fr: Email professionnel
+                    en: Email
+                email: jm@cheynier.com
+              - type: phone
+                name:
+                  translation:
+                    fr: Téléphone personnel
+                    en: Phone
+                countryCode: '+33'
+                number: 0649334551
           skills:
             - name: JS
               level: SENIOR
-              type: Programming
+              type: programming
               translation:
                 fr: Programmation Javascript
                 en: Javascript Programming
+            - name: NODE
+              level: MEDIOR
+              type: programming
+              translation:
+                fr: 'Programmation serveur, NodeJs '
+                en: Backend NodeJs Programming
+            - name: JAVA
+              level: MEDIOR
+              type: programming
+              translation:
+                fr: Programmation orienté objet
+                en: Object oriented programming with JAVA EE
+            - name: ENGLISH
+              level: B2
+              type: language
+              translation:
+                fr: Anglais
+                en: English
+            - name: FRENCH
+              level: C2
+              type: language
+              translation:
+                fr: Français
+                en: French
+            - name: GERMAN
+              level: A2
+              type: language
+              translation:
+                fr: Allemand
+                en: German
+            - name: FARSI
+              level: A2
+              type: language
+              translation:
+                fr: Farsi
+                en: Farsi
           degrees:
-            - from: 2011/09/01
-              to: 2014/09/01
+            - title:
+                translation:
+                  fr: 'Diplome d''ingénieur en informatique, spécialité logiciel embarqué'
+                  en: Masters degree in IT - Embedded Software
+              description:
+                translation:
+                  fr: Description du diplome ...
+                  en: Desc ...
+              date: 2011/09/01
               school:
                 name: Telecom Nancy
                 type: Engineering School
                 translation:
                   fr: 'Telecome Nancy, Grande Ecole d''Ingénieur'
                   en: Master of Computer Science at 'Telecom Nancy' engineering school
+              address:
+                line1: 193 Av. Paul Muller
+                zipCode: '54602'
+                city: Villers-lès-Nancy
+                country: France
+                countryCode: FR
+            - date: 2009/09/01
+              translation:
+                fr: Baccalauréat scientifique
+                en: Science baccalaureate
+              school:
+                name: Institut Notre Dame de Meudon
+                type: Highschool
+                translation:
+                  fr: Institut Notre Dame de Meudon
+                  en: Institut Notre Dame - Highschool
+              address:
+                line1: 24 Rue Alexandre Guilmant
+                zipCode: '92190'
+                city: Meudon
+                country: France
+                countryCode: FR
+          experiences:
+            - title:
+                translation:
+                  fr: Stagiaire fullstack developper - Système d'informations d'entreprise
+                  en: 13 Rue Louis Pasteur
+              description:
+                translation:
+                  fr: Stagiaire ...
+                  en: Intern ...
+              from: 2014/06/01
+              to: 2014/08/31
+              company:
+                logo: ''
+                name: Aubay
+                type: SSII
+                description:
+                  translation:
+                    fr: SSII située en ...
+                    en: SSII ...
+              address:
+                line1: 13 Rue Louis Pasteur
+                zipCode: '92160'
+                city: Boulogne Billancourt
+                country: France
+                countryCode: FR
+              skills: []
   securitySchemes:
     bearerAuth:
       type: http

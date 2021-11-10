@@ -1,0 +1,245 @@
+{
+  "cv": {
+    "_id": "6182af7f982dd92932b0c14d",
+    "infos": {
+      "citizenship": {
+        "translation": {
+          "fr": "Française",
+          "en": "French"
+        }
+      },
+      "contact": [
+        {
+          "type": "post",
+          "name": {
+            "translation": {
+              "fr": "Adresse",
+              "en": "Address"
+            }
+          },
+          "line1": "Chaussée de Waterloo, 87",
+          "zipCode": "1060",
+          "city": "Saint Gilles",
+          "country": "Belgique",
+          "countryCode": "BE"
+        },
+        {
+          "type": "email",
+          "name": {
+            "translation": {
+              "fr": "Email professionnel",
+              "en": "Email"
+            }
+          },
+          "email": "jm@cheynier.com"
+        },
+        {
+          "type": "phone",
+          "name": {
+            "translation": {
+              "fr": "Téléphone personnel",
+              "en": "Phone"
+            }
+          },
+          "countryCode": "+33",
+          "number": "0649334551"
+        },
+        {
+          "type": "social_network",
+          "name": {
+            "translation": {
+              "fr": "LinkedIn",
+              "en": "LinkedIn"
+            }
+          },
+          "networkName": "linkedin",
+          "profile": "https://www.linkedin.com/in/jeanmarccheynier/"
+        },
+        {
+          "type": "social_network",
+          "name": {
+            "translation": {
+              "fr": "Github",
+              "en": "Github"
+            }
+          },
+          "networkName": "github",
+          "profile": "https://github.com/Jean-MarcCheynier"
+        }
+      ],
+      "_id": "61840a98981c5329a2f452c3",
+      "name": "Jean-Marc",
+      "surname": "Cheynier",
+      "dateOfBirth": "1991-04-24T22:00:00.000Z",
+      "citizenshipLOCCODE": "FR",
+      "updated_at": "2021-11-04T16:30:16.827Z",
+      "created_at": "2021-11-04T16:30:16.827Z"
+    },
+    "skills": [
+      {
+        "name": "JS",
+        "level": "SENIOR",
+        "type": "programming",
+        "translation": { 
+          "fr": "Programmation Javascript",
+          "en": "Javascript Programming"
+        }
+      },
+      {
+        "name": "REACT",
+        "level": "SENIOR",
+        "type": "programming",
+        "translation": { 
+          "fr": "Creation d'interfaces graphiques avec la bibliothèque Javascript ReactJs",
+          "en": "UI/Ux programming with ReactJs framework"
+        }
+      },
+      {
+        "name": "ANGULAR",
+        "level": "MEDIOR",
+        "type": "programming",
+        "translation": { 
+          "fr": "Creation d'interfaces graphiques avec la bibliothèque Javascript ReactJs",
+          "en": "UI/Ux programming with ReactJs framework"
+        }
+      },
+      {
+        "name": "NODE",
+        "level": "MEDIOR",
+        "type": "programming",
+        "translation": { 
+          "fr": "Programmation serveur, NodeJs ",
+          "en": "Backend NodeJs Programming"
+        }
+      },
+      {
+        "name": "JAVA",
+        "level": "MEDIOR",
+        "type": "programming",
+        "translation": { 
+          "fr": "Programmation orienté objet",
+          "en": "Object oriented programming with JAVA EE"
+        }
+      },
+      {
+        "name": "ENGLISH",
+        "level": "B2",
+        "type": "language",
+        "translation": { 
+          "fr": "Anglais",
+          "en": "English"
+        }
+      },
+      {
+        "name": "FRENCH",
+        "level": "C2",
+        "type": "language",
+        "translation": { 
+          "fr": "Français",
+          "en": "French"
+        }
+      },
+      {
+        "name": "GERMAN",
+        "level": "A2",
+        "type": "language",
+        "translation": { 
+          "fr": "Allemand",
+          "en": "German"
+        }
+      },
+      {
+        "name": "FARSI",
+        "level": "A2",
+        "type": "language",
+        "translation": { 
+          "fr": "Farsi",
+          "en": "Farsi"
+        }
+      }
+    ],
+    "degrees": [
+      {
+        "title": {
+          "translation": {
+            "fr": "Diplome d'ingénieur en informatique, spécialité logiciel embarqué",
+            "en": "Masters degree in IT - Embedded Software"
+          }
+        },
+        "description": {
+          "translation": {
+            "fr": "Description du diplome ...",
+            "en": "Desc ..."
+          }
+        },
+        "school": {
+          "name": "Telecom Nancy",
+          "type": "Engineering School",
+          "translation": {
+            "fr": "Telecome Nancy, Grande Ecole d'Ingénieur",
+            "en": "Master of Computer Science at 'Telecom Nancy' engineering school"
+          }
+        },
+        "_id": "61840a98981c5329a2f452c5",
+        "updated_at": "2021-11-04T16:30:16.827Z",
+        "created_at": "2021-11-04T16:30:16.827Z"
+      },
+      {
+        "school": {
+          "name": "Institut Notre Dame de Meudon",
+          "type": "Highschool",
+          "translation": {
+            "fr": "Institut Notre Dame de Meudon",
+            "en": "Institut Notre Dame - Highschool"
+          }
+        },
+        "_id": "61840a98981c5329a2f452c6",
+        "updated_at": "2021-11-04T16:30:16.827Z",
+        "created_at": "2021-11-04T16:30:16.827Z"
+      }
+    ],
+    "experiences": [
+      {
+        "title": {
+          "translation": {
+            "fr": "Stagiaire fullstack developper - Système d'informations d'entreprise",
+            "en": "13 Rue Louis Pasteur"
+          }
+        },
+        "description": {
+          "translation": {
+            "fr": "Stagiaire ...",
+            "en": "Intern ..."
+          }
+        },
+        "company": {
+          "description": {
+            "translation": {
+              "fr": "SSII située en ...",
+              "en": "SSII ..."
+            }
+          },
+          "logo": "",
+          "name": "Aubay",
+          "type": "SSII"
+        },
+        "address": {
+          "line1": "13 Rue Louis Pasteur",
+          "zipCode": "92160",
+          "city": "Boulogne Billancourt",
+          "country": "France",
+          "countryCode": "FR"
+        },
+        "skills": [],
+        "_id": "61840a98981c5329a2f452c7",
+        "from": "2014-05-31T22:00:00.000Z",
+        "to": "2014-08-30T22:00:00.000Z",
+        "created_at": "2021-11-04T16:30:16.827Z",
+        "updated_at": "2021-11-04T16:30:16.827Z"
+      }
+    ],
+    "created_at": "2021-11-03T15:49:20.018Z",
+    "updated_at": "2021-11-04T16:30:16.827Z",
+    "__v": 0
+  }
+}
